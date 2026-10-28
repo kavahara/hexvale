@@ -26,7 +26,9 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
+  <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
   <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/theme.js" defer></script>
 </head>
 <body class="pal-orlo">
   <a class="skip" href="#main">Skip to content</a>
@@ -37,10 +39,16 @@
         <a href="/orlo/privacy/" aria-current="page">Privacy</a>
         <a href="/orlo/support/">Support</a>
       </nav>
-      <nav class="lang" aria-label="Language">
-        <a href="/orlo/privacy/" lang="en" aria-current="page">EN</a>
-        <a href="/ru/orlo/privacy/" hreflang="ru" lang="ru">RU</a>
-      </nav>
+      <div class="header-tools">
+        <nav class="lang" aria-label="Language">
+          <a href="/orlo/privacy/" lang="en" aria-current="page">EN</a>
+          <a href="/ru/orlo/privacy/" hreflang="ru" lang="ru">RU</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Dark theme" title="Dark theme" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+        </button>
+      </div>
     </div>
   </header>
   <main id="main">
@@ -171,6 +179,7 @@
     <div class="wrap">
       <p class="footer-bottom">© 2026 Hexvale</p>
     </div>
+    <div class="footer-giant" aria-hidden="true">Hexvale</div>
   </footer>
 </body>
 </html>

@@ -26,7 +26,10 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
+  <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
   <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/theme.js" defer></script>
+  <script src="/assets/orlo-meter.js" defer></script>
 </head>
 <body class="pal-orlo">
   <a class="skip" href="#main">Skip to content</a>
@@ -37,10 +40,16 @@
         <a href="/orlo/privacy/">Privacy</a>
         <a href="/orlo/support/">Support</a>
       </nav>
-      <nav class="lang" aria-label="Language">
-        <a href="/orlo/" lang="en" aria-current="page">EN</a>
-        <a href="/ru/orlo/" hreflang="ru" lang="ru">RU</a>
-      </nav>
+      <div class="header-tools">
+        <nav class="lang" aria-label="Language">
+          <a href="/orlo/" lang="en" aria-current="page">EN</a>
+          <a href="/ru/orlo/" hreflang="ru" lang="ru">RU</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Dark theme" title="Dark theme" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+        </button>
+      </div>
     </div>
   </header>
   <main id="main">
@@ -106,14 +115,17 @@
           <div>
             <p class="kicker">Export</p>
             <h2 id="size-title">The file size you need</h2>
-            <p class="lead">See the estimated file size live while you export, and pick a preset: Portal (up to 1 MB), Email or Archive.</p>
+            <p class="lead">See the estimated file size live while you export, and pick a preset: “Up to 1 MB”, “Email” or “Archive”.</p>
           </div>
-          <div class="meter" aria-hidden="true">
+          <div class="meter" data-meter data-sizes="78000|128000|214000|346000|1240000" data-levels="Minimum quality|Low quality|Normal quality|High quality|Maximum quality" data-units="B|KB|MB" data-decimal=".">
             <p class="meter-label">File size</p>
-            <p class="meter-value">≈ 346 <span>KB</span></p>
+            <p class="meter-value">≈ <span class="mv-num">346</span> <span class="mv-unit">KB</span></p>
             <p class="meter-meta">3 pages · PDF</p>
-            <div class="meter-track"><i></i><i></i><i></i><i></i><b></b></div>
-            <div class="chips"><span class="on">Portal (up to 1 MB)</span><span>Email</span><span>Archive</span></div>
+            <p class="mv-level">High quality</p>
+            <div class="meter-scale" aria-hidden="true"><span>Smaller file</span><span>Better quality</span></div>
+            <div class="meter-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <input class="meter-range" type="range" min="0" max="4" step="1" value="3" aria-label="Quality">
+            <div class="chips" role="group" aria-label="Presets"><button type="button" data-level="3" class="on" aria-pressed="true">Up to 1 MB</button><button type="button" data-level="3" aria-pressed="false">Email</button><button type="button" data-level="4" aria-pressed="false">Archive</button></div>
           </div>
         </div>
       </div>
@@ -134,7 +146,7 @@
           <article class="card reveal">
             <div class="art paper-bg" aria-hidden="true"><div class="ocr"><i></i><i class="hl"></i><i></i><i></i><span class="lang-chip">RU · EN</span></div></div>
             <h3>Text recognition</h3>
-            <p>Recognizes Russian and English text right on your iPhone.</p>
+            <p>Recognizes text in many languages right on your iPhone.</p>
           </article>
           <article class="card reveal">
             <div class="art paper-bg" aria-hidden="true"><div class="cloud-art"><div class="cloud"></div><i class="sync"></i><div class="sheet"></div></div></div>
@@ -201,6 +213,7 @@
     <div class="wrap">
       <p class="footer-bottom">© 2026 Hexvale</p>
     </div>
+    <div class="footer-giant" aria-hidden="true">Hexvale</div>
   </footer>
 </body>
 </html>
