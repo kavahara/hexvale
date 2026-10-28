@@ -4,11 +4,12 @@
     python3 scripts/check_links.py              # internal links only
     python3 scripts/check_links.py --external   # also request external URLs
 
-Checks: every href/src (and og:image/og:url) resolves to a file in the repo (directory links must
+Checks: every href/src/srcset (and og:image/og:url, and url() in CSS) resolves to a file in the repo (directory links must
 end with "/"), every #fragment exists on its target page, canonical URLs match
 the page, EN/RU alternates and the language switcher point at each other, and
 every page is reachable from the home page. Exits with 1 on any error.
 """
+import re
 import sys
 import urllib.request
 from html.parser import HTMLParser
@@ -62,6 +63,9 @@ class Page(HTMLParser):
         for attr in ("href", "src"):
             if attr in a:
                 self.links.append((tag, a.get("rel", ""), a[attr]))
+        for candidate in a.get("srcset", "").split(","):
+            if candidate.strip():
+                self.links.append((tag, "srcset", candidate.split()[0]))
 
     def handle_endtag(self, tag):
         if tag == "nav":
@@ -154,6 +158,13 @@ def main():
         for code, href in page.lang_switch.items():
             if SITE + href != page.alternates.get(code):
                 errors.append(f"{url}: language switch {code} -> {href} differs from hreflang alternate")
+
+    for css in sorted(ROOT.glob("assets/**/*.css")):
+        css_url = url_of(css)
+        for ref in re.findall(r'url\(\s*["\']?(/[^"\')]+)', css.read_text(encoding="utf-8")):
+            checked += 1
+            if not file_of(ref).is_file():
+                errors.append(f"{css_url}: url({ref}) -> missing file")
 
     reachable, queue = {"/"}, ["/"]
     while queue:
