@@ -64,6 +64,7 @@
   --glow-1: rgb(154 71 50 / 0.2);
   --glow-2: rgb(214 150 110 / 0.26);
   --glow-3: rgb(234 210 190 / 0.5);
+  --wm-dot: #b4553b;
   --font-heading: var(--font-serif);
 }
 
@@ -114,6 +115,7 @@
     --muted: #bba99f;
     --accent: #b4553b;
     --accent-text: #e5977c;
+    --wm-dot: #e0805f;
     --glow-1: rgb(180 85 59 / 0.3);
     --glow-2: rgb(229 151 124 / 0.14);
     --glow-3: rgb(120 70 50 / 0.3);
@@ -347,27 +349,32 @@ p {
 }
 
 .brand .product {
-  font-family: var(--font-serif);
-  font-weight: 600;
-  color: var(--accent-text);
+  color: var(--text);
+}
+
+.brand .product .wordmark {
+  height: 1.15em;
 }
 
 .logo {
   flex: none;
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
+  background: currentColor;
+  -webkit-mask: url("/assets/logo/hexvale-mark.svg") center / contain no-repeat;
+  mask: url("/assets/logo/hexvale-mark.svg") center / contain no-repeat;
 }
 
-.logo .hex {
-  fill: currentColor;
+/* Orlo wordmark: letters follow the text colour, the r keeps its terracotta dot. */
+.wordmark {
+  display: block;
+  width: auto;
+  height: 1em;
+  overflow: visible;
 }
 
-.logo .vale {
-  fill: none;
-  stroke: var(--bg);
-  stroke-width: 2.2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.wordmark .wm-dot {
+  fill: var(--wm-dot, #b4553b);
 }
 
 .nav {
@@ -760,22 +767,20 @@ p {
   background: linear-gradient(150deg, rgb(255 255 255 / 0.28), transparent 45%), var(--hx);
 }
 
-.hx svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: var(--bg);
-  stroke-width: 2.2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.hx-mark {
+  aspect-ratio: 1;
+}
+
+.hx-mark::before {
+  clip-path: none;
+  -webkit-mask: url("/assets/logo/hexvale-mark.svg") center / contain no-repeat;
+  mask: url("/assets/logo/hexvale-mark.svg") center / contain no-repeat;
 }
 
 .hx-1 {
-  top: 70px;
-  left: 30px;
-  width: 250px;
+  top: 60px;
+  left: 10px;
+  width: 280px;
   --hx: linear-gradient(150deg, color-mix(in srgb, var(--text) 80%, var(--bg)), var(--text));
 }
 
@@ -908,6 +913,30 @@ p {
   .app-body {
     padding: 36px 36px 40px;
   }
+}
+
+.app-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.app-head .status {
+  white-space: nowrap;
+}
+
+.app-icon {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 22.37%;
+  box-shadow: 0 10px 22px -12px rgb(42 30 26 / 0.6);
+}
+
+.app-name .wordmark {
+  height: 0.85em;
+  color: var(--text);
 }
 
 .app-name {
@@ -1306,13 +1335,30 @@ p {
   }
 }
 
+.o-brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.o-icon {
+  flex: none;
+  width: clamp(64px, 6vw + 32px, 96px);
+  height: auto;
+  border-radius: 22.37%;
+  box-shadow: 0 18px 36px -16px rgb(42 30 26 / 0.55);
+}
+
 .o-wordmark {
-  margin-top: 28px;
-  font-family: var(--font-serif);
-  font-size: clamp(5.5rem, 2.8rem + 11vw, 11.5rem);
-  font-weight: 600;
-  line-height: 0.86;
-  letter-spacing: -0.05em;
+  margin-top: 30px;
+  font-size: clamp(4.25rem, 2.2rem + 8.5vw, 8.75rem);
+  line-height: 1;
+}
+
+.o-wordmark .wordmark {
+  height: 1em;
+  color: var(--text);
 }
 
 .o-tagline {

@@ -11,7 +11,7 @@
 | `/fitness/`, `/ru/fitness/` | Фитнес-приложение — заглушка «Coming soon» |
 | `/privacy/`, `/ru/privacy/` | Общая политика студии |
 
-Стили — `assets/site.css`: нейтральная палитра студии, палитры продуктов — классы `pal-orlo` и `pal-fitness`. Светлая и тёмная тема — по `prefers-color-scheme`. Иллюстрации (телефон, лист с уголками, шестиугольники) нарисованы на CSS; анимации отключаются при «Уменьшении движения». Иконки — `assets/favicon.svg`, `assets/favicon-32.png`, `assets/apple-touch-icon.png`; превью для ссылок — `assets/og/`.
+Стили — `assets/site.css`: нейтральная палитра студии, палитры продуктов — классы `pal-orlo` и `pal-fitness`. Светлая и тёмная тема — по `prefers-color-scheme`. Иллюстрации (телефон, лист с уголками, шестиугольники) нарисованы на CSS; анимации отключаются при «Уменьшении движения». Знак Hexvale — `assets/logo/hexvale-mark.svg` (в шапке подставляется маской и берёт цвет текста); иконка Orlo — `assets/orlo/icon.svg`, слово «Orlo» встроено в страницы как SVG. Значки сайта — `assets/favicon.svg`, `assets/favicon-32.png`, `assets/apple-touch-icon.png`; превью для ссылок — `assets/og/`.
 
 Посмотреть локально (ссылки от корня, поэтому нужен сервер, а не открытие файла):
 
