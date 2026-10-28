@@ -71,6 +71,8 @@
               <li><a href="#no-account">Using Orlo without an account</a></li>
               <li><a href="#account">Signing in</a></li>
               <li><a href="#cloud">What is stored in the cloud</a></li>
+              <li><a href="#web">Your account on the web</a></li>
+              <li><a href="#technical">IP addresses and logs</a></li>
               <li><a href="#providers">Service providers</a></li>
               <li><a href="#camera">Camera and photos</a></li>
               <li><a href="#text">Text recognition</a></li>
@@ -94,7 +96,8 @@
                 <li>You can sign in with Apple or Google. Your documents are then stored on our server.</li>
                 <li>No ads, no analytics, no tracking.</li>
                 <li>We don’t sell your data or use it for advertising.</li>
-                <li>You can delete your account and all your cloud data in the app.</li>
+                <li>On <a href="https://account.hexvale.dev">account.hexvale.dev</a> you can see your documents and download a copy of all your data.</li>
+                <li>You can delete your account and all your cloud data in the app or on account.hexvale.dev.</li>
               </ul>
             </section>
 
@@ -107,13 +110,19 @@
               <li>Apple — a unique account identifier and, if Orlo asks for it, your email address (Apple lets you hide it behind a relay address);</li>
               <li>Google — your Google account identifier and email address.</li>
             </ul>
-            <p>We use this information only to run your account and sign you in.</p>
+            <p>We use this information only to run your account and sign you in. If you sign in with Apple, we also keep a token from Apple, encrypted, so that we can disconnect Orlo from your Apple ID when you delete your account.</p>
 
             <h2 id="cloud">What is stored in the cloud</h2>
-            <p>While you’re signed in, Orlo uploads your documents to our server — scanned pages, document names and recognized text — and keeps them while your account exists. Data travels over an encrypted connection. We don’t look at the contents of your documents and don’t use them for anything other than storing them for you.</p>
+            <p>While you’re signed in, Orlo uploads your documents to our server — scanned pages and their original photos, document names and folders, recognized text and the page layout needed to show it — and keeps them while your account exists. Data travels over an encrypted connection and is stored encrypted. We don’t look at the contents of your documents and don’t use them for anything other than storing them for you.</p>
+
+            <h2 id="web">Your account on the web</h2>
+            <p>On <a href="https://account.hexvale.dev">account.hexvale.dev</a> you can sign in with the same Apple or Google account to see and download your documents, download a copy of all your data, and delete documents or your whole account. The page uses only two cookies, both necessary for it to work: one keeps you signed in (until you sign out, for up to 7 days), the other remembers your language. There are no other cookies, no analytics and no third-party scripts.</p>
+
+            <h2 id="technical">IP addresses and logs</h2>
+            <p>Like any internet service, our server sees the IP address of your device with each request. We use it only to protect the service from overload and abuse, keep it in memory for no longer than 10 minutes, and never store it or write it to logs. Our logs record only technical facts about requests — when, which kind of request and whether it succeeded — never the contents or names of documents, recognized text, sign-in tokens or email addresses.</p>
 
             <h2 id="providers">Service providers</h2>
-            <p>Sign-in with Apple and Google is handled by those companies under their own privacy policies. Our server runs at a hosting provider that stores data on our behalf. They receive only what is needed for these tasks.</p>
+            <p>Sign-in with Apple and Google is handled by those companies under their own privacy policies. Our server runs at a hosting provider, and the files of your documents are kept, encrypted, in its storage; it processes data only on our behalf. The hosting provider may also process connection data, such as IP addresses, to deliver traffic and protect its network. They receive only what is needed for these tasks.</p>
 
             <h2 id="camera">Camera and photos</h2>
             <p>Orlo uses the camera only to scan documents, and photos from your library only to import the pictures you choose for scanning. If you’re signed in, the resulting scans are stored in the cloud as described above.</p>
@@ -128,13 +137,14 @@
             <p>Orlo has no advertising and no analytics, and it doesn’t track you across apps or websites. We don’t sell your data and don’t share it for advertising.</p>
 
             <h2 id="deleting">Deleting your data</h2>
-            <p>You can delete any document in the app; if you’re signed in, it is deleted from the cloud too. You can delete your account in Orlo’s settings — this deletes all your documents from our server. Deleting the app removes the data stored on your iPhone.</p>
+            <p>You can delete any document in the app or on account.hexvale.dev; if you’re signed in, it is deleted from the cloud too. Its name and text are removed right away and its page images within a day; we keep only an empty marker so that your other devices delete the document as well.</p>
+            <p>You can delete your account in Orlo’s settings or on account.hexvale.dev. Your account and documents are deleted from our server right away and their files from storage shortly after; if you signed in with Apple, Orlo is also disconnected from your Apple ID. Deleting the app removes the data stored on your iPhone.</p>
 
             <h2 id="purpose">Why we process this data</h2>
             <p>We process account and cloud data only to provide what you asked for: signing you in and storing your documents. We don’t use your data for advertising or profiling.</p>
 
             <h2 id="rights">Your rights</h2>
-            <p>Wherever you live, you can ask for a copy of your data, correct it, delete it or object to its processing. Much of this you can do in the app: export documents, delete them or delete your whole account. For anything else, write to us — we’ll reply within 30 days. You can also complain to the data protection authority in your country.</p>
+            <p>Wherever you live, you can ask for a copy of your data, correct it, delete it or object to its processing. Much of this you can do yourself: on account.hexvale.dev you can download a copy of all your data as an archive, and in the app or on account.hexvale.dev you can delete documents or your whole account. For anything else, write to us — we’ll reply within 30 days. You can also complain to the data protection authority in your country.</p>
 
             <h2 id="transfers">Where data is processed</h2>
             <p>Our server and service providers may be in a country other than yours. We transfer data across borders only to run Orlo, with the safeguards required by law, and protect it as described in this policy.</p>
@@ -150,7 +160,7 @@
 
             <h2 id="contact">Contact</h2>
             <p>Orlo is made by Hexvale, which is responsible for the data described in this policy. Questions about privacy and requests about your data: <a href="mailto:hello@hexvale.dev">hello@hexvale.dev</a>.</p>
-            <p>This policy covers the Orlo app. This website is covered by the <a href="/privacy/">Hexvale privacy policy</a>.</p>
+            <p>This policy covers the Orlo app and your account page at account.hexvale.dev. This website is covered by the <a href="/privacy/">Hexvale privacy policy</a>.</p>
         </article>
       </div>
     </section>
