@@ -2,30 +2,37 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Orlo — политика конфиденциальности</title>
   <meta name="description" content="Orlo не собирает данные: нет аккаунтов, аналитики, рекламы и третьих сторон. Сканы остаются на вашем iPhone.">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f0ea">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#17110f">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#140f0d">
   <link rel="canonical" href="https://hexvale.dev/ru/orlo/privacy/">
   <link rel="alternate" hreflang="en" href="https://hexvale.dev/orlo/privacy/">
   <link rel="alternate" hreflang="ru" href="https://hexvale.dev/ru/orlo/privacy/">
   <link rel="alternate" hreflang="x-default" href="https://hexvale.dev/orlo/privacy/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hexvale">
   <meta property="og:title" content="Orlo — политика конфиденциальности">
   <meta property="og:description" content="Orlo не собирает данные: нет аккаунтов, аналитики, рекламы и третьих сторон. Сканы остаются на вашем iPhone.">
   <meta property="og:url" content="https://hexvale.dev/ru/orlo/privacy/">
+  <meta property="og:image" content="https://hexvale.dev/assets/og/orlo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body class="t-orlo page-orlo">
+<body class="pal-orlo">
   <a class="skip" href="#main">Перейти к содержанию</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <p class="brand"><a href="/ru/">Hexvale</a><span class="sep" aria-hidden="true">/</span><a class="product" href="/ru/orlo/">Orlo</a></p>
+      <p class="brand"><a href="/ru/"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path class="hex" d="M12 1.5 21.1 6.75v10.5L12 22.5 2.9 17.25V6.75z"/><path class="vale" d="m7.6 9.6 4.4 5 4.4-5"/></svg><span>Hexvale</span></a><span class="sep" aria-hidden="true">/</span><a class="product" href="/ru/orlo/">Orlo</a></p>
       <nav class="nav" aria-label="Основное меню">
         <a href="/ru/orlo/privacy/" aria-current="page">Конфиденциальность</a>
         <a href="/ru/orlo/support/">Поддержка</a>
@@ -36,65 +43,100 @@
       </nav>
     </div>
   </header>
-  <main id="main" class="wrap">
-    <article class="doc">
-      <header class="doc-header">
+  <main id="main">
+    <section class="doc-hero">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="wrap rise">
+        <p class="kicker">Orlo</p>
         <h1>Политика конфиденциальности</h1>
-        <p class="meta">Orlo · Обновлено <time datetime="2026-10-28">28 октября 2026 г.</time></p>
-      </header>
-      <div class="prose">
+        <p class="meta">Обновлено <time datetime="2026-10-28">28 октября 2026 г.</time></p>
         <p class="lead">Orlo не собирает никаких данных. Сканы, фото и распознанный текст остаются на вашем iPhone.</p>
-
-        <div class="panel">
-          <h2>Коротко</h2>
-          <ul class="checks">
-            <li>Данные не собираются — ни нами, ни третьими сторонами.</li>
-            <li>Нет регистрации и аккаунтов.</li>
-            <li>Нет аналитики, рекламы и отслеживания.</li>
-            <li>Нет сторонних сервисов и SDK.</li>
-            <li>Всё хранится только на устройстве.</li>
-          </ul>
-        </div>
-
-        <h2>Какие данные собирает Orlo</h2>
-        <p>Никакие. В Orlo нет аккаунтов, аналитики, рекламы, сторонних SDK и сервисов. Приложение не отправляет ни нам, ни кому-либо ещё ваши документы или сведения о вас и вашем устройстве.</p>
-
-        <h2>Камера и фото</h2>
-        <p>Камера нужна Orlo только для сканирования документов, а фото из галереи — только для импорта снимков, которые вы выбрали. Изображения обрабатываются на устройстве и никуда не загружаются.</p>
-
-        <h2>Где хранятся документы</h2>
-        <p>Сканы, импортированные фото и распознанный текст хранятся только на вашем iPhone, внутри Orlo. У Orlo нет серверов и облачной синхронизации, поэтому мы не видим и не получаем ваши документы.</p>
-
-        <h2>Распознавание текста</h2>
-        <p>Текст (русский и английский) распознаётся полностью на устройстве. Распознанный текст никуда не отправляется.</p>
-
-        <h2>Экспорт и отправка</h2>
-        <p>Когда вы экспортируете документ или делитесь им, файл попадает только туда, куда выберете вы, — например, в приложение «Файлы» или в другое приложение. Дальше с ним работают по правилам этого приложения или сервиса.</p>
-
-        <h2>Удаление данных</h2>
-        <p>Любой документ можно удалить в приложении. При удалении Orlo с iPhone удаляются и все его данные.</p>
-
-        <h2>Сведения от Apple</h2>
-        <p>Если вы разрешили iPhone делиться аналитикой с разработчиками приложений, Apple может передавать нам отчёты о сбоях и статистику использования по своей политике конфиденциальности. Отключить это можно в «Настройки» → «Конфиденциальность и безопасность» → «Аналитика и улучшения». В самом Orlo аналитики нет.</p>
-
-        <h2>Изменения политики</h2>
-        <p>Если политика изменится, мы обновим эту страницу и дату выше.</p>
-
-        <h2>Контакты</h2>
-        <p>Вопросы о конфиденциальности: <a href="mailto:hello@hexvale.dev">hello@hexvale.dev</a>.</p>
-        <p>Эта политика относится к приложению Orlo. Для сайта действует <a href="/ru/privacy/">политика конфиденциальности Hexvale</a>.</p>
       </div>
-    </article>
+    </section>
+
+    <section class="doc-body">
+      <div class="wrap doc-grid">
+        <nav class="toc" aria-label="На этой странице">
+          <p>На этой странице</p>
+          <ol>
+              <li><a href="#summary">Коротко</a></li>
+              <li><a href="#collects">Какие данные собирает Orlo</a></li>
+              <li><a href="#camera">Камера и фото</a></li>
+              <li><a href="#storage">Где хранятся документы</a></li>
+              <li><a href="#text">Распознавание текста</a></li>
+              <li><a href="#sharing">Экспорт и отправка</a></li>
+              <li><a href="#deleting">Удаление данных</a></li>
+              <li><a href="#apple">Сведения от Apple</a></li>
+              <li><a href="#changes">Изменения политики</a></li>
+              <li><a href="#contact">Контакты</a></li>
+          </ol>
+        </nav>
+        <article class="prose">
+            <section class="summary" id="summary" aria-labelledby="summary-title">
+              <h2 id="summary-title">Коротко</h2>
+              <ul class="checks">
+                <li>Данные не собираются — ни нами, ни третьими сторонами.</li>
+                <li>Нет регистрации и аккаунтов.</li>
+                <li>Нет аналитики, рекламы и отслеживания.</li>
+                <li>Нет сторонних сервисов и SDK.</li>
+                <li>Всё хранится только на устройстве.</li>
+              </ul>
+            </section>
+
+            <h2 id="collects">Какие данные собирает Orlo</h2>
+            <p>Никакие. В Orlo нет аккаунтов, аналитики, рекламы, сторонних SDK и сервисов. Приложение не отправляет ни нам, ни кому-либо ещё ваши документы или сведения о вас и вашем устройстве.</p>
+
+            <h2 id="camera">Камера и фото</h2>
+            <p>Камера нужна Orlo только для сканирования документов, а фото из галереи — только для импорта снимков, которые вы выбрали. Изображения обрабатываются на устройстве и никуда не загружаются.</p>
+
+            <h2 id="storage">Где хранятся документы</h2>
+            <p>Сканы, импортированные фото и распознанный текст хранятся только на вашем iPhone, внутри Orlo. У Orlo нет серверов и облачной синхронизации, поэтому мы не видим и не получаем ваши документы.</p>
+
+            <h2 id="text">Распознавание текста</h2>
+            <p>Текст (русский и английский) распознаётся полностью на устройстве. Распознанный текст никуда не отправляется.</p>
+
+            <h2 id="sharing">Экспорт и отправка</h2>
+            <p>Когда вы экспортируете документ или делитесь им, файл попадает только туда, куда выберете вы, — например, в приложение «Файлы» или в другое приложение. Дальше с ним работают по правилам этого приложения или сервиса.</p>
+
+            <h2 id="deleting">Удаление данных</h2>
+            <p>Любой документ можно удалить в приложении. При удалении Orlo с iPhone удаляются и все его данные.</p>
+
+            <h2 id="apple">Сведения от Apple</h2>
+            <p>Если вы разрешили iPhone делиться аналитикой с разработчиками приложений, Apple может передавать нам отчёты о сбоях и статистику использования по своей политике конфиденциальности. Отключить это можно в «Настройки» → «Конфиденциальность и безопасность» → «Аналитика и улучшения». В самом Orlo аналитики нет.</p>
+
+            <h2 id="changes">Изменения политики</h2>
+            <p>Если политика изменится, мы обновим эту страницу и дату выше.</p>
+
+            <h2 id="contact">Контакты</h2>
+            <p>Вопросы о конфиденциальности: <a href="mailto:hello@hexvale.dev">hello@hexvale.dev</a>.</p>
+            <p>Эта политика относится к приложению Orlo. Для сайта действует <a href="/ru/privacy/">политика конфиденциальности Hexvale</a>.</p>
+        </article>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <p>© 2026 Hexvale</p>
-      <nav aria-label="Дополнительно">
-        <a href="/ru/">Hexvale</a>
-        <a href="/ru/orlo/">Orlo</a>
-        <a href="/ru/privacy/">Конфиденциальность</a>
-        <a href="mailto:hello@hexvale.dev">hello@hexvale.dev</a>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <p class="brand"><a href="/ru/"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path class="hex" d="M12 1.5 21.1 6.75v10.5L12 22.5 2.9 17.25V6.75z"/><path class="vale" d="m7.6 9.6 4.4 5 4.4-5"/></svg><span>Hexvale</span></a></p>
+        <p>Независимая студия мобильных приложений.</p>
+      </div>
+      <nav class="footer-col" aria-label="Приложения">
+        <p class="footer-title">Приложения</p>
+        <ul>
+          <li><a href="/ru/orlo/">Orlo</a></li>
+          <li><a href="/ru/fitness/">Фитнес-приложение</a></li>
+        </ul>
       </nav>
+      <nav class="footer-col" aria-label="Студия">
+        <p class="footer-title">Студия</p>
+        <ul>
+          <li><a href="/ru/privacy/">Конфиденциальность</a></li>
+          <li><a href="mailto:hello@hexvale.dev">hello@hexvale.dev</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="wrap">
+      <p class="footer-bottom">© 2026 Hexvale</p>
     </div>
   </footer>
 </body>

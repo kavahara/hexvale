@@ -4,7 +4,7 @@
     python3 scripts/check_links.py              # internal links only
     python3 scripts/check_links.py --external   # also request external URLs
 
-Checks: every href/src resolves to a file in the repo (directory links must
+Checks: every href/src (and og:image/og:url) resolves to a file in the repo (directory links must
 end with "/"), every #fragment exists on its target page, canonical URLs match
 the page, EN/RU alternates and the language switcher point at each other, and
 every page is reachable from the home page. Exits with 1 on any error.
@@ -29,6 +29,7 @@ class Page(HTMLParser):
         self.lang = None
         self.has_title = False
         self.canonical = None
+        self.og_url = None
         self.alternates = {}
         self.lang_switch = {}
         self._nav_depth = 0
@@ -52,6 +53,10 @@ class Page(HTMLParser):
                 self.canonical = a.get("href")
             if "alternate" in rel and a.get("hreflang"):
                 self.alternates[a["hreflang"]] = a.get("href")
+        elif tag == "meta" and a.get("property") in ("og:image", "og:url"):
+            self.links.append((tag, a["property"], a.get("content", "")))
+            if a["property"] == "og:url":
+                self.og_url = a.get("content")
         elif tag == "a" and self._lang_nav_depth is not None and "href" in a:
             self.lang_switch[a.get("lang")] = a["href"]
         for attr in ("href", "src"):
@@ -102,6 +107,8 @@ def main():
             errors.append(f"{url}: no <title>")
         if page.canonical != here:
             errors.append(f"{url}: canonical is {page.canonical!r}, expected {here!r}")
+        if page.og_url != here:
+            errors.append(f"{url}: og:url is {page.og_url!r}, expected {here!r}")
 
         for tag, rel, href in page.links:
             full = urljoin(here, href)

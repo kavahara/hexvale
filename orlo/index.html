@@ -2,30 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Orlo — free document scanner for iPhone</title>
   <meta name="description" content="Take a photo or pick one from your gallery: Orlo finds the page, straightens it and makes a PDF of the size you need. No sign-up, no cloud, no ads.">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f0ea">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#17110f">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#140f0d">
   <link rel="canonical" href="https://hexvale.dev/orlo/">
   <link rel="alternate" hreflang="en" href="https://hexvale.dev/orlo/">
   <link rel="alternate" hreflang="ru" href="https://hexvale.dev/ru/orlo/">
   <link rel="alternate" hreflang="x-default" href="https://hexvale.dev/orlo/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hexvale">
   <meta property="og:title" content="Orlo — free document scanner for iPhone">
   <meta property="og:description" content="Take a photo or pick one from your gallery: Orlo finds the page, straightens it and makes a PDF of the size you need. No sign-up, no cloud, no ads.">
   <meta property="og:url" content="https://hexvale.dev/orlo/">
+  <meta property="og:image" content="https://hexvale.dev/assets/og/orlo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body class="t-orlo page-orlo">
+<body class="pal-orlo">
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <p class="brand"><a href="/">Hexvale</a><span class="sep" aria-hidden="true">/</span><a class="product" href="/orlo/">Orlo</a></p>
+      <p class="brand"><a href="/"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path class="hex" d="M12 1.5 21.1 6.75v10.5L12 22.5 2.9 17.25V6.75z"/><path class="vale" d="m7.6 9.6 4.4 5 4.4-5"/></svg><span>Hexvale</span></a><span class="sep" aria-hidden="true">/</span><a class="product" href="/orlo/">Orlo</a></p>
       <nav class="nav" aria-label="Main">
         <a href="/orlo/privacy/">Privacy</a>
         <a href="/orlo/support/">Support</a>
@@ -36,88 +43,161 @@
       </nav>
     </div>
   </header>
-  <main id="main" class="wrap">
-    <section class="product-hero">
-      <p class="status">Coming soon to the App Store</p>
-      <h1 class="wordmark-xl">Orlo</h1>
-      <p class="tagline">Free document scanner for iPhone</p>
-      <p class="lead">Take a photo or pick one from your gallery. Orlo finds the page, straightens it and turns it into a PDF of the size you need.</p>
-      <ul class="tags">
-        <li>No sign-up</li>
-        <li>No cloud</li>
-        <li>No ads</li>
-        <li>No analytics</li>
-      </ul>
-    </section>
-
-    <section aria-label="Screenshots">
-      <!-- Placeholders: replace each .shot-frame div with <img src="/assets/orlo/screenshot-1.png" alt="…" width="1290" height="2796">. -->
-      <div class="shots">
-        <figure class="shot"><div class="shot-frame">Screenshot 1</div></figure>
-        <figure class="shot"><div class="shot-frame">Screenshot 2</div></figure>
-        <figure class="shot"><div class="shot-frame">Screenshot 3</div></figure>
+  <main id="main">
+    <section class="o-hero">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="wrap o-hero-grid rise">
+        <div>
+          <p class="status">Coming soon to the App Store</p>
+          <h1 class="o-wordmark">Orlo</h1>
+          <p class="o-tagline">Free document scanner for iPhone</p>
+          <p class="lead">Take a photo or pick one from your gallery. Orlo finds the page, straightens it and turns it into a PDF of the size you need.</p>
+          <ul class="tags"><li>No sign-up</li><li>No cloud</li><li>No ads</li><li>No analytics</li></ul>
+        </div>
+        <div class="device" aria-hidden="true">
+          <!-- When real screenshots exist, put one here: <img src="/assets/orlo/screen-1.png" alt="" width="1290" height="2796"> inside .phone-screen. -->
+          <div class="phone">
+            <div class="phone-screen live">
+              <div class="desk"></div>
+              <div class="sheet"><div class="frame"><i></i><i></i><i></i><i></i></div></div>
+              <div class="export-pill">Export ≈ 346 KB</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="section" aria-labelledby="how-title">
-      <h2 id="how-title">How it works</h2>
-      <ol class="grid-3 steps">
-        <li class="tile">
-          <h3>Snap or import</h3>
-          <p>Take a photo of a document or import photos from your gallery — many at once, each becomes a page.</p>
-        </li>
-        <li class="tile">
-          <h3>Found and straightened</h3>
-          <p>Orlo finds the page in the photo and straightens it automatically.</p>
-        </li>
-        <li class="tile">
-          <h3>PDF of the right size</h3>
-          <p>Export a PDF and see its estimated file size live, before you save it.</p>
-        </li>
-      </ol>
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="kicker">How it works</p>
+          <h2 id="how-title">From photo to PDF</h2>
+        </header>
+        <ol class="steps">
+          <li class="card reveal">
+            <div class="art desk-bg" aria-hidden="true"><div class="desk"></div><div class="sheet tilted"><div class="frame"><i></i><i></i><i></i><i></i></div></div></div>
+            <p class="step-num">01</p>
+            <h3>Snap or import</h3>
+            <p>Take a photo of a document or import photos from your gallery — many at once, each becomes a page.</p>
+          </li>
+          <li class="card reveal">
+            <div class="art paper-bg" aria-hidden="true"><div class="sheet"></div></div>
+            <p class="step-num">02</p>
+            <h3>Found and straightened</h3>
+            <p>Orlo finds the page in the photo and straightens it automatically.</p>
+          </li>
+          <li class="card reveal">
+            <div class="art size-art" aria-hidden="true"><div><p class="big">≈ 346 <span>KB</span></p><p class="small">PDF</p></div></div>
+            <p class="step-num">03</p>
+            <h3>PDF of the right size</h3>
+            <p>Export a PDF and see its estimated file size live, before you save it.</p>
+          </li>
+        </ol>
+      </div>
     </section>
 
-    <section class="section" aria-labelledby="features-title">
-      <h2 id="features-title">What Orlo can do</h2>
-      <ul class="grid-3">
-        <li class="tile feature">
-          <h3>The file size you need</h3>
-          <p>A live size estimate on export, plus presets: Portal (up to 1 MB), Email and Archive.</p>
-        </li>
-        <li class="tile feature">
-          <h3>Batch import</h3>
-          <p>Select many photos in your gallery at once — each one becomes a page of the document.</p>
-        </li>
-        <li class="tile feature">
-          <h3>Text recognition</h3>
-          <p>Recognizes Russian and English text right on your iPhone.</p>
-        </li>
-      </ul>
+    <section class="section" aria-labelledby="size-title">
+      <div class="wrap">
+        <div class="spotlight reveal">
+          <div class="glow" aria-hidden="true"></div>
+          <div>
+            <p class="kicker">Export</p>
+            <h2 id="size-title">The file size you need</h2>
+            <p class="lead">See the estimated file size live while you export, and pick a preset: Portal (up to 1 MB), Email or Archive.</p>
+          </div>
+          <div class="meter" aria-hidden="true">
+            <p class="meter-label">File size</p>
+            <p class="meter-value">≈ 346 <span>KB</span></p>
+            <p class="meter-meta">3 pages · PDF</p>
+            <div class="meter-track"><i></i><i></i><i></i><i></i><b></b></div>
+            <div class="chips"><span class="on">Portal (up to 1 MB)</span><span>Email</span><span>Archive</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="more-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="kicker">Features</p>
+          <h2 id="more-title">What else Orlo can do</h2>
+        </header>
+        <div class="bento">
+          <article class="card reveal">
+            <div class="art" aria-hidden="true"><div class="photos"><i class="sel" data-n="1"></i><i></i><i class="sel" data-n="2"></i><i></i><i class="sel" data-n="3"></i><i></i></div></div>
+            <h3>Batch import</h3>
+            <p>Select many photos in your gallery at once — each one becomes a page of the document.</p>
+          </article>
+          <article class="card reveal">
+            <div class="art paper-bg" aria-hidden="true"><div class="ocr"><i></i><i class="hl"></i><i></i><i></i><span class="lang-chip">RU · EN</span></div></div>
+            <h3>Text recognition</h3>
+            <p>Recognizes Russian and English text right on your iPhone.</p>
+          </article>
+          <article class="card reveal">
+            <div class="art" aria-hidden="true"><p class="free-word">Free</p></div>
+            <h3>No sign-up</h3>
+            <p>Orlo is free, works without an account and has no ads.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="o-privacy" aria-labelledby="privacy-title">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="wrap">
+        <p class="kicker reveal">Privacy</p>
+        <h2 id="privacy-title" class="reveal">Your documents stay on your phone.</h2>
+        <ul class="strikes" aria-label="What Orlo doesn’t have">
+          <li><span class="sr-only">No </span>Sign-up</li>
+          <li><span class="sr-only">No </span>Cloud</li>
+          <li><span class="sr-only">No </span>Ads</li>
+          <li><span class="sr-only">No </span>Analytics</li>
+        </ul>
+        <p class="lead reveal">Orlo collects no data. The camera and photos are used only for scanning, and text is recognized right on your iPhone.</p>
+        <div class="actions">
+          <a class="btn btn-ghost" href="/orlo/privacy/">Privacy policy <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
     </section>
 
     <section class="section">
-      <div class="panel privacy-panel">
-        <h2>Your documents stay on your phone</h2>
-        <p class="lead">Orlo collects no data. Everything is stored only on your iPhone.</p>
-        <ul class="checks">
-          <li>No sign-up or accounts</li>
-          <li>No cloud — nothing is uploaded</li>
-          <li>No ads and no analytics</li>
-          <li>Camera and photos are used only for scanning</li>
-        </ul>
-        <p class="links"><a href="/orlo/privacy/">Privacy policy</a><a href="/orlo/support/">Support</a></p>
+      <div class="wrap">
+        <div class="cta reveal">
+          <div class="glow" aria-hidden="true"></div>
+          <div class="hexgrid" aria-hidden="true"></div>
+          <h2>Coming soon to the App Store</h2>
+          <p>Orlo will be free. Questions before the release? Write to us.</p>
+          <div class="actions">
+            <a class="btn btn-light" href="mailto:hello@hexvale.dev">hello@hexvale.dev</a>
+            <a class="btn btn-outline" href="/orlo/support/">Support <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
   <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <p>© 2026 Hexvale</p>
-      <nav aria-label="Footer">
-        <a href="/">Hexvale</a>
-        <a href="/orlo/">Orlo</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="mailto:hello@hexvale.dev">hello@hexvale.dev</a>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <p class="brand"><a href="/"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path class="hex" d="M12 1.5 21.1 6.75v10.5L12 22.5 2.9 17.25V6.75z"/><path class="vale" d="m7.6 9.6 4.4 5 4.4-5"/></svg><span>Hexvale</span></a></p>
+        <p>Independent mobile app studio.</p>
+      </div>
+      <nav class="footer-col" aria-label="Apps">
+        <p class="footer-title">Apps</p>
+        <ul>
+          <li><a href="/orlo/">Orlo</a></li>
+          <li><a href="/fitness/">Fitness app</a></li>
+        </ul>
       </nav>
+      <nav class="footer-col" aria-label="Studio">
+        <p class="footer-title">Studio</p>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="mailto:hello@hexvale.dev">hello@hexvale.dev</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="wrap">
+      <p class="footer-bottom">© 2026 Hexvale</p>
     </div>
   </footer>
 </body>

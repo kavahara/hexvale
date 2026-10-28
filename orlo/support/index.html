@@ -2,30 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Orlo support</title>
   <meta name="description" content="Help with Orlo, the free document scanner for iPhone: contact and frequently asked questions.">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f0ea">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#17110f">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#140f0d">
   <link rel="canonical" href="https://hexvale.dev/orlo/support/">
   <link rel="alternate" hreflang="en" href="https://hexvale.dev/orlo/support/">
   <link rel="alternate" hreflang="ru" href="https://hexvale.dev/ru/orlo/support/">
   <link rel="alternate" hreflang="x-default" href="https://hexvale.dev/orlo/support/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hexvale">
   <meta property="og:title" content="Orlo support">
   <meta property="og:description" content="Help with Orlo, the free document scanner for iPhone: contact and frequently asked questions.">
   <meta property="og:url" content="https://hexvale.dev/orlo/support/">
+  <meta property="og:image" content="https://hexvale.dev/assets/og/orlo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body class="t-orlo page-orlo">
+<body class="pal-orlo">
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <p class="brand"><a href="/">Hexvale</a><span class="sep" aria-hidden="true">/</span><a class="product" href="/orlo/">Orlo</a></p>
+      <p class="brand"><a href="/"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path class="hex" d="M12 1.5 21.1 6.75v10.5L12 22.5 2.9 17.25V6.75z"/><path class="vale" d="m7.6 9.6 4.4 5 4.4-5"/></svg><span>Hexvale</span></a><span class="sep" aria-hidden="true">/</span><a class="product" href="/orlo/">Orlo</a></p>
       <nav class="nav" aria-label="Main">
         <a href="/orlo/privacy/">Privacy</a>
         <a href="/orlo/support/" aria-current="page">Support</a>
@@ -36,67 +43,88 @@
       </nav>
     </div>
   </header>
-  <main id="main" class="wrap">
-    <article class="doc">
-      <header class="doc-header">
+  <main id="main">
+    <section class="doc-hero">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="wrap rise">
+        <p class="kicker">Orlo</p>
         <h1>Support</h1>
         <p class="lead">Have a question about Orlo or something isn’t working? Write to us.</p>
-      </header>
-
-      <div class="panel">
-        <p class="email"><a href="mailto:hello@hexvale.dev">hello@hexvale.dev</a></p>
-        <p class="note">Please include your iPhone model, iOS version and Orlo version, and describe what happened. Don’t send photos of real personal documents — any test page will do.</p>
       </div>
+    </section>
 
-      <section class="section" aria-labelledby="faq-title">
-        <h2 id="faq-title">Frequently asked questions</h2>
-        <div class="faq">
-          <details>
-            <summary>Do I need an account?</summary>
-            <p>No. Orlo works without sign-up or an account.</p>
-          </details>
-          <details>
-            <summary>Is Orlo free?</summary>
-            <p>Yes. Orlo is free and has no ads.</p>
-          </details>
-          <details>
-            <summary>Where are my scans stored?</summary>
-            <p>Only on your iPhone. Orlo doesn’t upload them anywhere and has no cloud.</p>
-          </details>
-          <details>
-            <summary>Can I scan photos I already have?</summary>
-            <p>Yes. Import photos from your gallery — select several at once, and each becomes a page.</p>
-          </details>
-          <details>
-            <summary>How do I fit a file into an upload limit?</summary>
-            <p>When exporting, choose a preset — Portal (up to 1 MB), Email or Archive — and watch the estimated file size, which updates live.</p>
-          </details>
-          <details>
-            <summary>Which languages can Orlo recognize?</summary>
-            <p>Russian and English. Text recognition runs right on your iPhone.</p>
-          </details>
-          <details>
-            <summary>Why does Orlo need the camera and photos?</summary>
-            <p>Only to scan documents and import the photos you choose. Nothing leaves your device.</p>
-          </details>
-          <details>
-            <summary>When will Orlo be available?</summary>
-            <p>Orlo is coming soon to the App Store.</p>
-          </details>
+    <section class="doc-body">
+      <div class="wrap support-grid">
+        <aside class="contact" aria-label="Email">
+          <div class="glow" aria-hidden="true"></div>
+          <p class="kicker">Email</p>
+          <a class="big-email" href="mailto:hello@hexvale.dev">hello@hexvale.dev <span class="arrow" aria-hidden="true">↗</span></a>
+          <p class="note">Please include your iPhone model, iOS version and Orlo version, and describe what happened. Don’t send photos of real personal documents — any test page will do.</p>
+        </aside>
+        <div>
+          <h2 class="faq-title" id="faq">Frequently asked questions</h2>
+          <div class="faq">
+            <details>
+              <summary>Do I need an account?</summary>
+              <p>No. Orlo works without sign-up or an account.</p>
+            </details>
+            <details>
+              <summary>Is Orlo free?</summary>
+              <p>Yes. Orlo is free and has no ads.</p>
+            </details>
+            <details>
+              <summary>Where are my scans stored?</summary>
+              <p>Only on your iPhone. Orlo doesn’t upload them anywhere and has no cloud.</p>
+            </details>
+            <details>
+              <summary>Can I scan photos I already have?</summary>
+              <p>Yes. Import photos from your gallery — select several at once, and each becomes a page.</p>
+            </details>
+            <details>
+              <summary>How do I fit a file into an upload limit?</summary>
+              <p>When exporting, choose a preset — Portal (up to 1 MB), Email or Archive — and watch the estimated file size, which updates live.</p>
+            </details>
+            <details>
+              <summary>Which languages can Orlo recognize?</summary>
+              <p>Russian and English. Text recognition runs right on your iPhone.</p>
+            </details>
+            <details>
+              <summary>Why does Orlo need the camera and photos?</summary>
+              <p>Only to scan documents and import the photos you choose. Nothing leaves your device.</p>
+            </details>
+            <details>
+              <summary>When will Orlo be available?</summary>
+              <p>Orlo is coming soon to the App Store.</p>
+            </details>
+          </div>
+          <p class="note">See also the <a href="/orlo/privacy/">Orlo privacy policy</a>.</p>
         </div>
-        <p class="note">See also the <a href="/orlo/privacy/">Orlo privacy policy</a>.</p>
-      </section>
-    </article>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <p>© 2026 Hexvale</p>
-      <nav aria-label="Footer">
-        <a href="/">Hexvale</a>
-        <a href="/orlo/">Orlo</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="mailto:hello@hexvale.dev">hello@hexvale.dev</a>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <p class="brand"><a href="/"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path class="hex" d="M12 1.5 21.1 6.75v10.5L12 22.5 2.9 17.25V6.75z"/><path class="vale" d="m7.6 9.6 4.4 5 4.4-5"/></svg><span>Hexvale</span></a></p>
+        <p>Independent mobile app studio.</p>
+      </div>
+      <nav class="footer-col" aria-label="Apps">
+        <p class="footer-title">Apps</p>
+        <ul>
+          <li><a href="/orlo/">Orlo</a></li>
+          <li><a href="/fitness/">Fitness app</a></li>
+        </ul>
       </nav>
+      <nav class="footer-col" aria-label="Studio">
+        <p class="footer-title">Studio</p>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="mailto:hello@hexvale.dev">hello@hexvale.dev</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="wrap">
+      <p class="footer-bottom">© 2026 Hexvale</p>
     </div>
   </footer>
 </body>

@@ -2,30 +2,37 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Фитнес-приложение — скоро · Hexvale</title>
   <meta name="description" content="Hexvale работает над фитнес-приложением. Название и подробности — скоро.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafaf9">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f0f0e">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef3ef">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0c1410">
   <link rel="canonical" href="https://hexvale.dev/ru/fitness/">
   <link rel="alternate" hreflang="en" href="https://hexvale.dev/fitness/">
   <link rel="alternate" hreflang="ru" href="https://hexvale.dev/ru/fitness/">
   <link rel="alternate" hreflang="x-default" href="https://hexvale.dev/fitness/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hexvale">
   <meta property="og:title" content="Фитнес-приложение — скоро · Hexvale">
   <meta property="og:description" content="Hexvale работает над фитнес-приложением. Название и подробности — скоро.">
   <meta property="og:url" content="https://hexvale.dev/ru/fitness/">
+  <meta property="og:image" content="https://hexvale.dev/assets/og/hexvale.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body class="t-fitness">
+<body class="pal-fitness">
   <a class="skip" href="#main">Перейти к содержанию</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <p class="brand"><a href="/ru/">Hexvale</a></p>
+      <p class="brand"><a href="/ru/"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path class="hex" d="M12 1.5 21.1 6.75v10.5L12 22.5 2.9 17.25V6.75z"/><path class="vale" d="m7.6 9.6 4.4 5 4.4-5"/></svg><span>Hexvale</span></a></p>
       <nav class="nav" aria-label="Основное меню">
         <a href="/ru/#apps">Приложения</a>
         <a href="/ru/#contact">Контакты</a>
@@ -36,23 +43,43 @@
       </nav>
     </div>
   </header>
-  <main id="main" class="wrap">
+  <main id="main">
     <section class="soon">
-      <p class="status">В разработке</p>
-      <h1>Скоро</h1>
-      <p class="lead">Hexvale работает над фитнес-приложением. Название и подробности появятся на этой странице.</p>
-      <a class="button" href="/ru/">На главную</a>
+      <div class="glow" aria-hidden="true"></div>
+      <div class="rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="wrap rise">
+        <p class="status">В разработке</p>
+        <h1 class="soon-title">Скоро</h1>
+        <p class="lead">Hexvale работает над фитнес-приложением. Название и подробности появятся на этой странице.</p>
+        <div class="actions">
+          <a class="btn btn-accent" href="/ru/">На главную</a>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <p>© 2026 Hexvale</p>
-      <nav aria-label="Дополнительно">
-        <a href="/ru/">Hexvale</a>
-        <a href="/ru/orlo/">Orlo</a>
-        <a href="/ru/privacy/">Конфиденциальность</a>
-        <a href="mailto:hello@hexvale.dev">hello@hexvale.dev</a>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <p class="brand"><a href="/ru/"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path class="hex" d="M12 1.5 21.1 6.75v10.5L12 22.5 2.9 17.25V6.75z"/><path class="vale" d="m7.6 9.6 4.4 5 4.4-5"/></svg><span>Hexvale</span></a></p>
+        <p>Независимая студия мобильных приложений.</p>
+      </div>
+      <nav class="footer-col" aria-label="Приложения">
+        <p class="footer-title">Приложения</p>
+        <ul>
+          <li><a href="/ru/orlo/">Orlo</a></li>
+          <li><a href="/ru/fitness/">Фитнес-приложение</a></li>
+        </ul>
       </nav>
+      <nav class="footer-col" aria-label="Студия">
+        <p class="footer-title">Студия</p>
+        <ul>
+          <li><a href="/ru/privacy/">Конфиденциальность</a></li>
+          <li><a href="mailto:hello@hexvale.dev">hello@hexvale.dev</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="wrap">
+      <p class="footer-bottom">© 2026 Hexvale</p>
     </div>
   </footer>
 </body>
