@@ -35,7 +35,7 @@ python3 scripts/check_links.py
 | Файл | Снимок | Автор |
 |---|---|---|
 | `backdrop-*.webp` | Looking to the stars | Austin Johnson |
-| `cover-smarttube-640.webp` | Guitarist bathed in red light | Sergio Alejandro Ortiz |
+| `cover-video-640.webp` | Guitarist bathed in red light | Sergio Alejandro Ortiz |
 | `cover-browser-640.webp` | City at Night | Kyle Sudu |
 | `cover-implayer-640.webp` | Lion's mane jellyfish in Gullmarn fjord | W.carter |
 | `cover-play-640.webp` | Colorful bokeh from outdoor lighting | Martin Eklund |
