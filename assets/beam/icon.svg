@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+  <defs>
+    <linearGradient id="h1" x1="22" y1="22" x2="86" y2="86" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E9579A"/>
+      <stop offset="1" stop-color="#A92E7C"/>
+    </linearGradient>
+    <linearGradient id="h2" x1="25.5" y1="30" x2="73.5" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFA07F"/>
+      <stop offset="1" stop-color="#FF6670"/>
+    </linearGradient>
+    <linearGradient id="h3" x1="29" y1="38" x2="61" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD594"/>
+      <stop offset="1" stop-color="#F6A65E"/>
+    </linearGradient>
+    <linearGradient id="h4" x1="32" y1="45.5" x2="49" y2="62.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFEBCB"/>
+    </linearGradient>
+    <radialGradient id="bg" cx="0.42" cy="0.45" r="0.75">
+      <stop offset="0" stop-color="#2a1424"/>
+      <stop offset="1" stop-color="#0b0a0d"/>
+    </radialGradient>
+  </defs>
+  <rect width="108" height="108" fill="url(#bg)"/>
+  <g transform="matrix(0.8125 0 0 0.8125 10.125 10.125)">
+    <circle cx="54" cy="54" r="32" fill="url(#h1)"/>
+    <circle cx="49.5" cy="54" r="24" fill="url(#h2)"/>
+    <circle cx="45" cy="54" r="16" fill="url(#h3)"/>
+    <circle cx="40.5" cy="54" r="8.5" fill="url(#h4)"/>
+  </g>
+</svg>
