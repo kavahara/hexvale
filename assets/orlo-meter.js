@@ -1,4 +1,4 @@
-// Interactive export demo on the Orlo page: the quality slider and presets change the file size estimate,
+// Interactive export demo on the Orlo page: the quality slider changes the file size estimate,
 // formatted like the app does it (decimal units, "≈", one decimal from 1 to 10 MB).
 (function () {
   var meter = document.querySelector("[data-meter]");
@@ -8,7 +8,6 @@
   var number = meter.querySelector(".mv-num");
   var unit = meter.querySelector(".mv-unit");
   var level = meter.querySelector(".mv-level");
-  var chips = Array.prototype.slice.call(meter.querySelectorAll(".chips button"));
   var dots = Array.prototype.slice.call(meter.querySelectorAll(".meter-dots i"));
   var sizes = meter.getAttribute("data-sizes").split("|").map(Number);
   var levels = meter.getAttribute("data-levels").split("|");
@@ -48,40 +47,19 @@
     frame = requestAnimationFrame(step);
   }
 
-  function update(fromChip) {
+  function update() {
     var i = Number(range.value);
     range.style.setProperty("--p", (i / (sizes.length - 1)) * 100 + "%");
     range.setAttribute("aria-valuetext", levels[i] + ", ≈ " + format(sizes[i]).join(" "));
     level.textContent = levels[i];
     dots.forEach(function (dot, d) { dot.classList.toggle("on", d <= i); });
-    if (!fromChip) {
-      chips.forEach(function (chip) {
-        if (chip.classList.contains("on") && Number(chip.getAttribute("data-level")) !== i) {
-          chip.classList.remove("on");
-          chip.setAttribute("aria-pressed", "false");
-        }
-      });
-    }
     animateTo(sizes[i]);
   }
 
   range.addEventListener("input", function () {
     meter.classList.add("is-touched");
-    update(false);
+    update();
   });
 
-  chips.forEach(function (chip) {
-    chip.addEventListener("click", function () {
-      chips.forEach(function (other) {
-        other.classList.toggle("on", other === chip);
-        other.setAttribute("aria-pressed", other === chip ? "true" : "false");
-      });
-      range.value = chip.getAttribute("data-level");
-      meter.classList.add("is-touched");
-      update(true);
-    });
-  });
-
-  meter.classList.add("is-live");
-  update(true);
+  update();
 })();

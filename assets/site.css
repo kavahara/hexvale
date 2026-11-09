@@ -970,7 +970,7 @@ p {
   }
 }
 
-/* Featured Orlo: warm dark band with the live phone. */
+/* Featured Orlo: Orlo's own palette in both themes, like the fitness card. */
 .showcase {
   position: relative;
   isolation: isolate;
@@ -979,30 +979,16 @@ p {
   align-items: center;
   overflow: hidden;
   padding: clamp(28px, 5vw, 72px);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  background: #2a1e1a;
-  color: #f6ece5;
-  --text: #fff7f1;
-  --muted: #cdb8ab;
-  --accent-text: #f0a98f;
-  --surface: #3a2b25;
-  --border: #54403a;
-  --wm-dot: #e0805f;
-  --glow-1: rgb(200 100 70 / 0.42);
-  --glow-2: rgb(240 169 143 / 0.14);
-  --glow-3: rgb(120 70 50 / 0.5);
+  background: var(--bg);
+  color: var(--text);
+  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .showcase {
-    background: #1d1512;
-    box-shadow: inset 0 0 0 1px #34271f;
-  }
-}
-
-:root[data-theme="dark"] .showcase {
-  background: #1d1512;
-  box-shadow: inset 0 0 0 1px #34271f;
+.showcase:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
 }
 
 @media (min-width: 900px) {
@@ -1033,6 +1019,18 @@ p {
   color: var(--text);
 }
 
+/* The whole card opens the app page, as the fitness card does; the button stays above the overlay. */
+.showcase-name a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.showcase:hover .btn .arrow {
+  transform: translateX(3px);
+}
+
 .showcase-name .wordmark {
   height: 1em;
 }
@@ -1049,6 +1047,8 @@ p {
 }
 
 .showcase .actions {
+  position: relative;
+  z-index: 3;
   margin-top: 12px;
 }
 
@@ -1063,30 +1063,6 @@ p {
   }
 
   .app-wide .app-art {
-    height: auto;
-    min-height: 320px;
-  }
-}
-
-.app-card {
-  position: relative;
-  isolation: isolate;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: var(--bg);
-  color: var(--text);
-  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
-}
-
-.app-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow);
-}
-
-.app-art {
     height: auto;
     min-height: 320px;
   }
@@ -1175,6 +1151,19 @@ p {
   box-shadow: 0 10px 22px -12px rgb(42 30 26 / 0.6);
 }
 
+/* The Orlo icon is dark brown: on a dark page it needs a hairline edge, otherwise it melts into the background. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .app-icon,
+  :root:not([data-theme="light"]) .o-icon {
+    box-shadow: 0 0 0 1px rgb(255 240 230 / 0.14), 0 10px 22px -12px rgb(0 0 0 / 0.8);
+  }
+}
+
+:root[data-theme="dark"] .app-icon,
+:root[data-theme="dark"] .o-icon {
+  box-shadow: 0 0 0 1px rgb(255 240 230 / 0.14), 0 10px 22px -12px rgb(0 0 0 / 0.8);
+}
+
 .app-name .wordmark {
   height: 0.85em;
   color: var(--text);
@@ -1223,14 +1212,90 @@ p {
 }
 
 @supports selector(:has(a)) {
-  .app-card:has(.app-name a:focus-visible) {
+  .app-card:has(.app-name a:focus-visible),
+  .showcase:has(.showcase-name a:focus-visible) {
     outline: 2px solid var(--accent-text);
     outline-offset: 4px;
   }
 
-  .app-name a:focus-visible {
+  .app-name a:focus-visible,
+  .showcase-name a:focus-visible {
     outline: none;
   }
+}
+
+/* The name */
+
+.about {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  gap: 28px;
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(28px, 5vw, 64px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.about .hexgrid {
+  opacity: 0.06;
+}
+
+@media (min-width: 720px) {
+  .about {
+    grid-template-columns: auto 1fr;
+    gap: clamp(40px, 6vw, 80px);
+  }
+}
+
+.about-mark {
+  width: clamp(88px, 14vw, 176px);
+  aspect-ratio: 1;
+  color: var(--text);
+}
+
+.about-mark .logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.name-parts {
+  display: grid;
+  gap: 22px;
+  margin: 28px 0 0;
+}
+
+@media (min-width: 720px) {
+  .name-parts {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+.name-parts dt {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.375rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.name-parts div:first-child dt {
+  color: var(--grad-1);
+}
+
+.name-parts div:last-child dt {
+  color: var(--grad-3);
+}
+
+.name-parts dd {
+  max-width: 26em;
+  margin: 8px 0 0;
+  color: var(--muted);
 }
 
 /* Contact */
@@ -1256,6 +1321,9 @@ p {
   background: #2a1e1a;
   --border: #4a3830;
   --muted: #cdb8ab;
+  --glow-1: rgb(200 100 70 / 0.42);
+  --glow-2: rgb(240 169 143 / 0.16);
+  --glow-3: rgb(120 70 50 / 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1344,7 +1412,7 @@ p {
   border-radius: 50px;
   background: linear-gradient(150deg, #4a372f, #1a1210 45%, #2b201c);
   box-shadow:
-    inset 0 0 0 1.5px rgb(255 255 255 / 0.08),
+    inset 0 0 0 1px rgb(0 0 0 / 0.35),
     0 50px 100px -40px rgb(70 30 15 / 0.55),
     0 24px 48px -24px rgb(70 30 15 / 0.45);
 }
@@ -1362,13 +1430,25 @@ p {
   transform: translateX(-50%);
 }
 
+/* The screen itself is dark: a light screen showed through the anti-aliased rounded edge of the photo
+   as a thin white outline. The light "scanned" background is a layer inset by 1 px, so it never reaches that edge. */
 .phone-screen {
   position: relative;
+  isolation: isolate;
   display: grid;
   place-items: center;
   height: 100%;
   overflow: hidden;
   border-radius: 40px;
+  background: #120c0a;
+}
+
+.phone-screen::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  border-radius: 39px;
   background: #efe6dd;
 }
 
@@ -1771,11 +1851,6 @@ p {
   font-weight: 600;
 }
 
-.chips button {
-  -webkit-user-select: none;
-  user-select: none;
-}
-
 .meter-scale {
   display: flex;
   justify-content: space-between;
@@ -1818,7 +1893,7 @@ p {
   display: block;
   width: 100%;
   height: 40px;
-  margin: 0 0 22px;
+  margin: 0;
   background: none;
   cursor: pointer;
   -webkit-appearance: none;
@@ -1900,42 +1975,6 @@ p {
 
 @keyframes thumb {
   50% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 16%, transparent); }
-}
-
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-
-.chips button {
-  padding: 9px 15px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--text);
-  font: inherit;
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.2;
-  cursor: pointer;
-  transition: background-color 0.25s, border-color 0.25s, color 0.25s, transform 0.2s var(--ease);
-}
-
-.chips button:hover {
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
-}
-
-.chips button:active {
-  transform: scale(0.96);
-}
-
-.chips .on,
-.chips .on:hover {
-  border-color: transparent;
-  background: var(--accent);
-  color: var(--on-accent);
 }
 
 /* Feature tiles */
@@ -2158,12 +2197,13 @@ p {
   object-position: 70% center;
 }
 
+/* On narrow screens the sheet in the photo lands right under the text, so the photo is dimmed more. */
 .o-privacy::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, rgb(30 21 17 / 0.9), rgb(30 21 17 / 0.8));
+  background: linear-gradient(180deg, rgb(30 21 17 / 0.95), rgb(30 21 17 / 0.88));
 }
 
 /* On wide screens the photo sits on the right and fades into the band. */
@@ -2410,6 +2450,10 @@ p {
   line-height: 1.75;
 }
 
+.prose > :first-child {
+  margin-top: 0;
+}
+
 .prose h2 {
   margin: 56px 0 14px;
   font-size: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
@@ -2643,6 +2687,15 @@ p {
 
 .soon .lead {
   margin-inline: auto;
+}
+
+/* 404: the same centred layout without a photo; one page for both languages. */
+.soon-plain .soon-title {
+  font-size: clamp(2.75rem, 1rem + 6vw, 5.75rem);
+}
+
+.soon-plain .lead + .lead {
+  margin-top: 6px;
 }
 
 /* ---------- Footer ---------- */

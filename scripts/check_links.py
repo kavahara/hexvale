@@ -8,6 +8,9 @@ Checks: every href/src/srcset (and og:image/og:url, and url() in CSS) resolves t
 end with "/"), every #fragment exists on its target page, canonical URLs match
 the page, EN/RU alternates and the language switcher point at each other, and
 every page is reachable from the home page. Exits with 1 on any error.
+
+404.html is served by GitHub Pages at any missing address, so it has no canonical URL,
+no alternates and no incoming links; only its own links are checked, and it must be noindex.
 """
 import re
 import sys
@@ -20,6 +23,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://hexvale.dev"
 HOST = urlsplit(SITE).netloc
 SKIP_DIRS = {".git", "scripts", "node_modules"}
+NOT_FOUND = "/404.html"
 
 
 class Page(HTMLParser):
@@ -31,6 +35,7 @@ class Page(HTMLParser):
         self.has_title = False
         self.canonical = None
         self.og_url = None
+        self.robots = None
         self.alternates = {}
         self.lang_switch = {}
         self._nav_depth = 0
@@ -54,6 +59,8 @@ class Page(HTMLParser):
                 self.canonical = a.get("href")
             if "alternate" in rel and a.get("hreflang"):
                 self.alternates[a["hreflang"]] = a.get("href")
+        elif tag == "meta" and a.get("name") == "robots":
+            self.robots = a.get("content")
         elif tag == "meta" and a.get("property") in ("og:image", "og:url"):
             self.links.append((tag, a["property"], a.get("content", "")))
             if a["property"] == "og:url":
@@ -109,10 +116,14 @@ def main():
             errors.append(f"{url}: <html> has no lang")
         if not page.has_title:
             errors.append(f"{url}: no <title>")
-        if page.canonical != here:
-            errors.append(f"{url}: canonical is {page.canonical!r}, expected {here!r}")
-        if page.og_url != here:
-            errors.append(f"{url}: og:url is {page.og_url!r}, expected {here!r}")
+        if url == NOT_FOUND:
+            if page.robots != "noindex":
+                errors.append(f"{url}: needs <meta name=\"robots\" content=\"noindex\">")
+        else:
+            if page.canonical != here:
+                errors.append(f"{url}: canonical is {page.canonical!r}, expected {here!r}")
+            if page.og_url != here:
+                errors.append(f"{url}: og:url is {page.og_url!r}, expected {here!r}")
 
         for tag, rel, href in page.links:
             full = urljoin(here, href)
@@ -137,6 +148,9 @@ def main():
                     errors.append(f"{url}: {href} -> no id={parts.fragment!r} on {target_url}")
             if tag == "a" and target.suffix == ".html":
                 graph[url].add(url_of(target))
+
+        if url == NOT_FOUND:
+            continue
 
         for code, href in page.alternates.items():
             alt_url = urlsplit(href).path
@@ -172,7 +186,7 @@ def main():
             if nxt not in reachable:
                 reachable.add(nxt)
                 queue.append(nxt)
-    for url in sorted(set(pages) - reachable):
+    for url in sorted(set(pages) - reachable - {NOT_FOUND}):
         errors.append(f"{url}: not reachable by links from /")
 
     if check_external:
